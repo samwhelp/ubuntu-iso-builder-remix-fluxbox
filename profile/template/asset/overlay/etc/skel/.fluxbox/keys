@@ -1097,7 +1097,7 @@ Mod1 Shift bracketleft :Exec brightnessctl set 5%-
 ##
 ## ## amixer
 ##
-## run to install pamixer
+## run to install amixer
 ##
 ## ``` sh
 ## sudo apt-get install alsa-utils
@@ -1125,11 +1125,12 @@ Mod1 Shift bracketleft :Exec brightnessctl set 5%-
 ## ## Fn Key
 ##
 
-XF86AudioMute :Exec amixer -q -D pulse sset Master toggle
+#XF86AudioMute :Exec amixer -q -D pulse sset Master toggle
 
-XF86AudioRaiseVolume :Exec amixer -q -D pulse sset Master 5%+ unmute
 
-XF86AudioLowerVolume :Exec amixer -q -D pulse sset Master 5%- unmute
+#XF86AudioLowerVolume :Exec amixer -q -D pulse sset Master 5%- unmute
+
+#XF86AudioRaiseVolume :Exec amixer -q -D pulse sset Master 5%+ unmute
 
 
 
@@ -1138,19 +1139,17 @@ XF86AudioLowerVolume :Exec amixer -q -D pulse sset Master 5%- unmute
 ##  ## Extra Key
 ##
 
-Mod1 m :Exec amixer -q -D pulse sset Master toggle
+#Mod1 m :Exec amixer -q -D pulse sset Master toggle
 
 
-Mod1 Shift period :Exec amixer -q -D pulse sset Master 5%+ unmute
+#Mod1 Shift comma :Exec amixer -q -D pulse sset Master 5%- unmute
 
-Mod1 Shift comma :Exec amixer -q -D pulse sset Master 5%- unmute
-
-
-Mod1 Control period :Exec amixer -q -D pulse sset Master 1%+ unmute
-
-Mod1 Control comma :Exec amixer -q -D pulse sset Master 1%- unmute
+#Mod1 Shift period :Exec amixer -q -D pulse sset Master 5%+ unmute
 
 
+#Mod1 Control comma :Exec amixer -q -D pulse sset Master 1%- unmute
+
+#Mod1 Control period :Exec amixer -q -D pulse sset Master 1%+ unmute
 
 
 ##
@@ -1180,11 +1179,12 @@ Mod1 Control comma :Exec amixer -q -D pulse sset Master 1%- unmute
 ## ## Fn Key
 ##
 
-#XF86AudioMute :Exec pamixer --toggle-mute
+XF86AudioMute :Exec pamixer --toggle-mute
 
-#XF86AudioRaiseVolume :Exec amixer -q -D pulse sset Master 5%+ unmute
 
-#XF86AudioLowerVolume :Exec amixer -q -D pulse sset Master 5%- unmute
+XF86AudioLowerVolume :Exec pamixer -d 5
+
+XF86AudioRaiseVolume :Exec pamixer -i 5
 
 
 
@@ -1193,19 +1193,17 @@ Mod1 Control comma :Exec amixer -q -D pulse sset Master 1%- unmute
 ##  ## Extra Key
 ##
 
-#Mod1 m :Exec pamixer --toggle-mute
+Mod1 m :Exec pamixer --toggle-mute
 
 
-#Mod1 Shift period :Exec pamixer -i 5
+Mod1 Shift comma :Exec pamixer -d 5
 
-#Mod1 Shift comma :Exec pamixer -d 5
-
-
-#Mod1 Control period :Exec pamixer -i 1
-
-#Mod1 Control comma :Exec pamixer -d 1
+Mod1 Shift period :Exec pamixer -i 5
 
 
+Mod1 Control comma :Exec pamixer -d 1
+
+Mod1 Control period :Exec pamixer -i 1
 
 
 ##
