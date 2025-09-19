@@ -1,5 +1,4 @@
 [begin] (fluxbox)
-	[separator]
 	[exec] (Search) {rofi -show drun}
 	[separator]
 	[exec] (File Manager) {thunar}
