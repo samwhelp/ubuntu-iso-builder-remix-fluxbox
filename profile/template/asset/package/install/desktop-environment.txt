@@ -36,6 +36,17 @@ pavucontrol
 pulseaudio
 
 
+mate-media
+
+
+xfce4-screenshooter
+screengrab
+
+
+brightnessctl
+brightness-udev
+
+
 
 
 
